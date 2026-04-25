@@ -13,7 +13,7 @@ public class DBConnection {
 
     private static final String URL      = "jdbc:mysql://localhost:3306/placement_portal?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     private static final String USER     = "root";
-    private static final String PASSWORD = "Mysql@123rushi";         // ← change to your MySQL password
+    private static final String PASSWORD = "root";         // ← change to your MySQL password
     private static final String DRIVER   = "com.mysql.cj.jdbc.Driver";
 
     static {
