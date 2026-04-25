@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login — Placement Portal</title>
+  <link rel="stylesheet" href="../../css/style.css"/>
+</head>
+<body>
+<div class="auth-page">
+  <div class="auth-card">
+
+    <div class="auth-logo">
+      <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0
+                   3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946
+                   3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138
+                   3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806
+                   3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438
+                   3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+        </svg>
+      </div>
+      <h1>Placement Portal</h1>
+      <p>Sign in to continue your journey</p>
+    </div>
+
+    <%-- Server-side error message (JSP) --%>
+    <% if (request.getAttribute("error") != null) { %>
+      <div class="alert alert-error">⚠ <%= request.getAttribute("error") %></div>
+    <% } %>
+    <% if ("true".equals(request.getParameter("registered"))) { %>
+      <div class="alert alert-success">✓ Registration successful! Please log in.</div>
+    <% } %>
+
+    <form method="POST" action="login">
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" name="email" class="form-control"
+               placeholder="you@college.edu" required autofocus/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input type="password" name="password" class="form-control"
+               placeholder="••••••••" required/>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign In</button>
+    </form>
+
+    <div class="auth-footer">
+      Don't have an account? <a href="register">Register now</a>
+    </div>
+    <div class="auth-footer" style="margin-top:8px">
+      Admin? <a href="../admin/login">Admin Login →</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

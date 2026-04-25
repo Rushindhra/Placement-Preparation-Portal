@@ -1,0 +1,64 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Placement Portal</title>
+  <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css"/>
+</head>
+<body>
+<div class="auth-page">
+  <div class="auth-card" style="max-width:520px">
+    <div class="auth-logo">
+      <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v6m3-3h-6m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
+      </div>
+      <h1>Create Account</h1>
+      <p>Start your placement preparation today</p>
+    </div>
+
+    <% if (request.getAttribute("error") != null) { %>
+      <div class="alert alert-error"><%= request.getAttribute("error") %></div>
+    <% } %>
+
+    <form method="post" action="<%=request.getContextPath()%>/register">
+      <div class="form-group">
+        <label class="form-label">Full Name *</label>
+        <input type="text" name="fullName" class="form-control" required/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address *</label>
+        <input type="email" name="email" class="form-control" required/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password *</label>
+        <input type="password" name="password" class="form-control" minlength="6" required/>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">College</label>
+          <input type="text" name="college" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Branch</label>
+          <input type="text" name="branch" class="form-control"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Year of Study</label>
+        <select name="year" class="form-control">
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3" selected>3rd Year</option>
+          <option value="4">4th Year</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Create Account</button>
+    </form>
+
+    <div class="auth-footer">Already have an account? <a href="<%=request.getContextPath()%>/login">Sign in</a></div>
+  </div>
+</div>
+</body>
+</html>
