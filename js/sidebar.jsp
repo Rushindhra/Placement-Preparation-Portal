@@ -1,5 +1,6 @@
 <%@ page import="com.placement.models.User" %>
 <%
+     // Fetch logged-in user details from session to display name and avatar initial.
     User _user = (User) session.getAttribute("user");
     String _name = (_user != null) ? _user.getFullName() : "User";
     String _initial = _name.length() > 0 ? String.valueOf(_name.charAt(0)).toUpperCase() : "U";
