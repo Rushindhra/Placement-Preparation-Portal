@@ -7,7 +7,7 @@
 %>
 <aside class="sidebar">
   <div class="sidebar-logo">
-    <h1>📋 PlacePrep</h1>
+    <h1>PlacePrep</h1>
     <span>Placement Preparation Portal</span>
   </div>
 
